@@ -30,14 +30,13 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" > /etc/
 # Install ``python-software-properties``, ``software-properties-common`` and PostgreSQL 9.5
 #  There are some warnings (in red) that show up during the build. You can hide
 #  them by prefixing each apt-get statement with DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y python-software-properties software-properties-common postgresql-9.5 postgresql-contrib-9.5 postgresql-9.5-postgis-2.2 postgis 
+RUN apt-get update && apt-get install -y postgresql-9.5 postgresql-contrib-9.5 postgresql-9.5-postgis-2.2 postgis-2.2
 
 # Note: The official Debian and Ubuntu images automatically ``apt-get clean``
 # after each ``apt-get``
 
 #Setting correct locale for db
-
-RUN pg_dropcluster 9.6 main
+RUN pg_dropcluster 9.2 main
 RUN pg_dropcluster 9.5 main && pg_createcluster --locale en_US.UTF-8 9.5 main -p 5432
 
 # Run the rest of the commands as the ``postgres`` user created by the ``postgres-9.5`` package when it was ``apt-get installed``
