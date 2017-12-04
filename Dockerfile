@@ -4,6 +4,8 @@
 FROM ubuntu:trusty
 MAINTAINER bjoern.ahlfeld@trecker.com
 
+#Set the terminal type
+ENV TERM xterm-256color
 #Change locales
 RUN export LANG=en_US.UTF-8 &&\
 	locale-gen "en_US.UTF-8" &&\
