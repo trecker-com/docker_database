@@ -38,8 +38,6 @@ RUN apt-get update && apt-get install -y python-software-properties software-pro
 # after each ``apt-get``
 
 #Setting correct locale for db
-
-RUN pg_dropcluster 9.6 main
 RUN pg_dropcluster 9.5 main && pg_createcluster --locale en_US.UTF-8 9.5 main -p 5432
 
 # Run the rest of the commands as the ``postgres`` user created by the ``postgres-9.5`` package when it was ``apt-get installed``
