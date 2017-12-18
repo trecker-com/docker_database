@@ -1,10 +1,16 @@
 pipeline {
-    agent any
-    stages {
-        stage('Creating empty Database') {
-            steps {
-                sh 'ci/create_database.sh'
-            }
-        }
-    }
+ agent any
+ stages {
+  stage('Creating empty Database') {
+   steps {
+    sh 'ci/create_database.sh'
+   }
+  }
+ }
+ post {
+  always {
+   cleanWs()
+   build job: 'Docker Cleanup', wait: false
+  }
+ }
 }
