@@ -2,7 +2,7 @@
 # example Dockerfile for https://docs.docker.com/examples/postgresql_service/
 #
 FROM ubuntu:trusty
-MAINTAINER bjoern.ahlfeld@trecker.com
+MAINTAINER itd@trecker.com
 
 #Set the terminal type
 ENV TERM xterm-256color
