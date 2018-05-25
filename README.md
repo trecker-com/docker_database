@@ -11,4 +11,4 @@ This repo dockerized PostGres Database v9.5 with the Postgis extension v2.2 base
 RUN pg_dropcluster 9.5 main && pg_createcluster --locale en_US.UTF-8 9.5 main
 
 #Docker hub
-You find a build container at https://hub.docker.com/r/treckercom/tecker_com_database/
+You find a build container at https://hub.docker.com/r/treckerdotcom/trecker_com_database/
