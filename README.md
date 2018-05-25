@@ -13,4 +13,4 @@ Always make sure that you have the right encoding for your database!
 Run ```pg_dropcluster 9.5 main && pg_createcluster --locale en_US.UTF-8 9.5 main```
 
 ## Docker hub
-You find a build container at https://hub.docker.com/r/treckerdotcom/trecker_com_database/
+You can find a build container at https://hub.docker.com/r/treckerdotcom/trecker_com_database/
